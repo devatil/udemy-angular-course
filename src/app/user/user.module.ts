@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserRoleComponent } from './user-role/user-role.component';
 import { UserComponent } from '../user/user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { IgxButtonModule } from 'igniteui-angular';
 
 const routes: Routes = [
 	{
@@ -34,6 +35,6 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [ UserListComponent, UserRoleComponent, UserComponent, UserDetailComponent ],
-	imports: [ CommonModule, RouterModule.forChild(routes) ]
+	imports: [ CommonModule, IgxButtonModule, RouterModule.forChild(routes) ]
 })
 export class UserModule {}

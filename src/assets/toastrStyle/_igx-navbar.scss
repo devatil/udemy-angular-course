@@ -1,0 +1,9 @@
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+$custom-theme: igx-navdrawer-theme($background: #2d313a,
+  $item-active-background: #ecc256,
+  $item-header-text-color: #ecc256);
+
+
+
+@include igx-navdrawer($custom-theme);
