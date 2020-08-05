@@ -3,14 +3,5 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 @import "./assets/toastrStyle/toaster.scss";
-
-@import "~igniteui-angular/lib/core/styles/themes/index";
-// Uncomment the following lines if you want to add a custom palette:
-// $primary: #731963 !default;
-// $secondary: #ce5712 !default;
-// $app-palette: igx-palette($primary, $secondary);
-
-/* autoprefixer grid: on */
-
-@include igx-core();
-@include igx-theme($default-palette);
+@import "./assets/toastrStyle/igx.scss";
+@import "./assets/toastrStyle/variable.scss";
