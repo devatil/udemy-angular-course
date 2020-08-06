@@ -15,6 +15,7 @@ import { UserModule } from './user/user.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'igniteui-angular';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { DataBindingModule } from './data-binding/data-binding.module';
 
 @NgModule({
 	declarations: [ AppComponent, RoleComponent, NavbarComponent, SidebarComponent ],
@@ -29,6 +30,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 		IgxNavbarModule,
 		IgxIconModule,
 		IgxNavigationDrawerModule,
+		DataBindingModule,
 		ToastrModule.forRoot({
 			timeOut: 2000,
 			progressBar: true,
