@@ -12,9 +12,21 @@ export class DataBindingComponent implements OnInit {
 		favorite_place: 'Kiz kulesi',
 		favorite_place_image:
 			'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.R9s0ytC6Z_XvfbAWXsVKDQHaE8%26pid%3DApi&f=1',
-		job: 'software enegenering'
+		job: 'software enegenering',
+		isEditable: true
 	};
+
+	type = 'text';
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	buttonclick() {
+		alert('clicked');
+	}
+
+	inputSubmit(value: any) {
+		//console.log(value);
+		alert(value.target.value + 'geldi....');
+	}
 }

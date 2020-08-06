@@ -1,8 +1,11 @@
 <div class="row">
   <div class="col-md-12">
-    <h1>One Way Binding</h1>
+    <h1>
+      One Way Binding
+      <span style="font-size: 0.9rem;">from component to DOM</span>
+    </h1>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h2>interpoition</h2>
         <p>Ad:{{ user.name }} Soyad {{ user.surname }}</p>
         <div>
@@ -13,6 +16,59 @@
           />
         </div>
       </div>
+      <div class="col-md-2">
+        <h3>properity binding</h3>
+        <input [type]="type" [value]="user.name" />
+      </div>
+      <div class="col-md-2">
+        <h3>attirubute binding</h3>
+        <input
+          [type]="type"
+          [value]="user.name"
+          [attr.disabled]="!user.isEditable ? 'disable' : null"
+        />
+      </div>
+      <div class="col-md-2">
+        <h3>Class binding</h3>
+        <p [class.red]="user.name === 'Atilla' ? true : false">Merhaba</p>
+      </div>
+      <div class="col-md-2">
+        <h3>style binding</h3>
+        <p [style.color]="user.name === 'Atilla' ? 'orange' : 'red'">
+          Merhaba Style
+        </p>
+      </div>
+      <div class="col-md-12">
+        <h2>
+          one way binding
+          <span style="font-size: 0.9rem;">from DOM to component</span>
+        </h2>
+        <div class="row">
+          <div class="col-md-4">
+            <h3>event binding</h3>
+            <input
+              type="text"
+              [value]="user.name"
+              (keyup.enter)="inputSubmit($event)"
+            />
+            <button (click)="buttonclick()">OK!</button>
+          </div>
+
+          <div class="col-md-4">
+            <h1>jelloo</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h1>Two Way binding</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>ngModel</h3>
+      <input type="text" [(ngModel)]="user.name" />
+      <p>{{ user.name }}</p>
     </div>
   </div>
 </div>
