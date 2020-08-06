@@ -17,11 +17,11 @@ import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'ignit
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DataBindingModule } from './data-binding/data-binding.module';
 import { StorageModule } from './storage/storage.module';
+import { DirectivesModule } from './directives/directives.module';
 import { CookieService } from 'ngx-cookie-service';
-import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
-	declarations: [ AppComponent, RoleComponent, NavbarComponent, SidebarComponent, DirectivesComponent ],
+	declarations: [ AppComponent, RoleComponent, NavbarComponent, SidebarComponent ],
 	imports: [
 		BrowserModule,
 		CommonModule,
@@ -35,6 +35,7 @@ import { DirectivesComponent } from './directives/directives.component';
 		IgxNavigationDrawerModule,
 		DataBindingModule,
 		StorageModule,
+		DirectivesModule,
 		ToastrModule.forRoot({
 			timeOut: 2000,
 			progressBar: true,

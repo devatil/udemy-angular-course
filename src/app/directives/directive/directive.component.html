@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex justify-content-center">
+      <h2>
+        Directives
+      </h2>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <h2 style="font-weight: bold;">Structul Directives</h2>
+    <br />
+    <h2>*ngIf</h2>
+    <input type="text" [(ngModel)]="name" />
+    <button (click)="changeTitle()">Title Toogle</button>
+    <br />
+    <p *ngIf="name === 'Atilla'">Ismin Atilla</p>
+    <p *ngIf="title">title ....</p>
+
+    <br />
+    <div *ngIf="title; then isTitleExist; else isnotTitleExist"></div>
+    <ng-template #isTitleExist>Tittle VAR templati</ng-template>
+    <ng-template #isnotTitleExist>Tittle YOK templati</ng-template>
+  </div>
+  <div class="col-md-4">
+    <h2 style="font-weight: bold;">*ngSwitch</h2>
+    <input type="text" [(ngModel)]="username" />
+
+    <ul [ngSwitch]="username">
+      <li *ngSwitchCase="'Atilla'">Merhaba Atilla</li>
+      <li *ngSwitchCase="'Zeynep'">Merhaba Zeynep</li>
+      <li *ngSwitchDefault>Hello Zusasamen</li>
+    </ul>
+  </div>
+</div>

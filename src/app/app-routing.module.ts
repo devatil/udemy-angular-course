@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RoleComponent } from './role/role.component';
+import { DirectivesModule } from './directives/directives.module';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,10 @@ const routes: Routes = [
 	{
 		path: 'storage',
 		loadChildren: () => import('./storage/storage.module').then((m) => m.StorageModule)
+	},
+	{
+		path: 'directive',
+		loadChildren: () => import('./directives/directives.module').then((m) => m.DirectivesModule)
 	},
 
 	{
