@@ -6,17 +6,31 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { HomeModule } from './home/home.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { IgxButtonModule } from 'igniteui-angular';
+
+import { RoleComponent } from './role/role.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UserModule } from './user/user.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'igniteui-angular';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DataBindingModule } from './data-binding/data-binding.module';
 
 @NgModule({
-	declarations: [ AppComponent ],
+	declarations: [ AppComponent, RoleComponent, NavbarComponent, SidebarComponent ],
 	imports: [
 		BrowserModule,
 		CommonModule,
 		BrowserAnimationsModule,
 		NgxSpinnerModule,
-		IgxButtonModule,
+		AppRoutingModule,
+		HomeModule,
+		UserModule,
+		IgxNavbarModule,
+		IgxIconModule,
+		IgxNavigationDrawerModule,
+		DataBindingModule,
 		ToastrModule.forRoot({
 			timeOut: 2000,
 			progressBar: true,
