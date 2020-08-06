@@ -16,9 +16,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { IgxNavbarModule, IgxIconModule, IgxNavigationDrawerModule } from 'igniteui-angular';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DataBindingModule } from './data-binding/data-binding.module';
+import { StorageModule } from './storage/storage.module';
+import { CookieService } from 'ngx-cookie-service';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
-	declarations: [ AppComponent, RoleComponent, NavbarComponent, SidebarComponent ],
+	declarations: [ AppComponent, RoleComponent, NavbarComponent, SidebarComponent, DirectivesComponent ],
 	imports: [
 		BrowserModule,
 		CommonModule,
@@ -31,6 +34,7 @@ import { DataBindingModule } from './data-binding/data-binding.module';
 		IgxIconModule,
 		IgxNavigationDrawerModule,
 		DataBindingModule,
+		StorageModule,
 		ToastrModule.forRoot({
 			timeOut: 2000,
 			progressBar: true,
@@ -41,7 +45,7 @@ import { DataBindingModule } from './data-binding/data-binding.module';
 			positionClass: 'toast-bottom-left'
 		})
 	],
-	providers: [],
+	providers: [ CookieService ],
 	bootstrap: [ AppComponent ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

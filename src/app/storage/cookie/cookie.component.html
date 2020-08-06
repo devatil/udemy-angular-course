@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-5">
+    <input type="text" [(ngModel)]="name" />
+    <p>Name : {{ name }}</p>
+    <p>Cookie Value : {{ cookieValue }}</p>
+    <p>Check cookie : {{ isCookie }}</p>
+  </div>
+  <div class="col-md-4">
+    <button (click)="setItemCookie(name)">set item</button>
+    <button (click)="getItemCookie()">get item</button>
+    <button (click)="clearItemCookie()">clear</button>
+    <button (click)="checkCookie()">check cookie</button>
+  </div>
+</div>
+
+<p>cookie works!</p>
+<button [routerLink]="['../local-storage']">go to local storage</button>
