@@ -27,6 +27,7 @@
     "ngx-cookie-service": "^10.0.1",
     "ngx-spinner": "^10.0.1",
     "ngx-toastr": "^13.0.0",
+    "prettier": "^2.0.5",
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

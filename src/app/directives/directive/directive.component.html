@@ -31,4 +31,49 @@
       <li *ngSwitchDefault>Hello Zusasamen</li>
     </ul>
   </div>
+
+  <div class="col-md-4">
+    <h4>*ngFor</h4>
+    <ul>
+      <li *ngFor="let city of cities; let i = index">
+        id: {{ city.id }} <br />
+        Sehir: {{ city.city }} <br />
+        Bolge: {{ city.region }}
+      </li>
+    </ul>
+  </div>
+</div>
+<br />
+<h3 style="font-weight: bold;">Attiribute Directive</h3>
+<div class="row">
+  <div class="col-md-4">
+    <h4>[ngClass]</h4>
+    <input type="text" [(ngModel)]="color" />
+    <p [ngClass]="color === 'red' ? 'red' : 'blue'">Renk</p>
+    <p
+      [ngClass]="{
+        red: color === 'red',
+        blue: color === 'blue'
+      }"
+    >
+      Yeni Renk
+    </p>
+  </div>
+  <div class="col-md-3">
+    <h2>ngStyle</h2>
+    <input type="text" [(ngModel)]="color" />
+    <p [ngStyle]="{ color: color }">
+      Hangi renk istersen
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h2 style="font-weight: bold;">Custom Directive</h2>
+  </div>
+  <br />
+  <div class="col-md-4">
+    <p appHighlight>Highlight Directive Works</p>
+  </div>
 </div>
