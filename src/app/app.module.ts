@@ -23,6 +23,7 @@ import { DataBindingModule } from './data-binding/data-binding.module';
 import { StorageModule } from './storage/storage.module';
 import { DirectivesModule } from './directives/directives.module';
 import { CookieService } from 'ngx-cookie-service';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CookieService } from 'ngx-cookie-service';
     DataBindingModule,
     StorageModule,
     DirectivesModule,
+    PipesModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,

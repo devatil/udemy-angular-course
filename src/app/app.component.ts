@@ -3,30 +3,36 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: [ './app.component.scss' ]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-	title = 'udemy-angular-course';
+  title = 'udemy-angular-course';
 
-	constructor(private toastr: ToastrService, private spinner: NgxSpinnerService) {}
+  constructor(
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService
+  ) {}
 
-	ngOnInit() {
-		this.showSuccess();
-		this.showSpinner();
-	}
+  ngOnInit() {
+    this.showSuccess();
+    this.showSpinner();
+  }
 
-	showSuccess() {
-		this.toastr.success('Angular Udemy Egitimine Hosgeldiniz', 'Giris Basarili');
-	}
+  showSuccess() {
+    this.toastr.success(
+      'Angular Udemy Egitimine Hosgeldiniz',
+      'Giris Basarili'
+    );
+  }
 
-	showSpinner() {
-		this.spinner.show();
+  showSpinner() {
+    this.spinner.show();
 
-		setTimeout(() => {
-			/** spinner ends after 5 seconds */
-			this.spinner.hide();
-		}, 2000);
-	}
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2000);
+  }
 }

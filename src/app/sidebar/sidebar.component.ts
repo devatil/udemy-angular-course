@@ -31,6 +31,10 @@ export class SidebarComponent implements OnInit {
       baslik: 'Directive',
       path: 'directive',
     },
+    {
+      baslik: 'Pipes',
+      path: 'pipes',
+    },
   ];
 
   constructor() {}
