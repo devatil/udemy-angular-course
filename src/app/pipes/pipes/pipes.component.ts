@@ -9,10 +9,19 @@ export class PipesComponent implements OnInit {
   title = 'AnkAramIn TasiNA BaK';
 
   upperCaseVal;
+  cashValue = 13432.423;
+  today;
 
   constructor() {}
-
+  objectVal: Object = [
+    {
+      foo: 'bar',
+      baz: 'qux',
+      nested: { xyz: 3, numbers: [1, 2, 3, 4, 5, 6] },
+    },
+  ];
   ngOnInit() {
+    this.today = new Date().toDateString();
     this.upperCaseVal = (this.title as any).toLocaleUpperCase('tr-TR');
   }
 }
