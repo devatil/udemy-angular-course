@@ -29,4 +29,34 @@
     <h4>With Pipe</h4>
     <p>{{ objectVal | json }}</p>
   </div>
+
+  <div class="col-md-3">
+    <h2>percent pipe</h2>
+    <p>{{ percentValu | percent }}</p>
+  </div>
+
+  <div class="col-md-2">
+    <h2>slice pipe</h2>
+    <p>normal pipe: {{ city | slice: 0:3 }}</p>
+    <p>slice uppercase pipe: {{ city | slice: 0:3 | uppercase }}</p>
+  </div>
+
+  <div class="col-md-4">
+    <h2>custom pipe</h2>
+    <p>{{ cash | TL }}</p>
+    <h4>Cities</h4>
+    <p>Custom pipe 2</p>
+
+    <ul>
+      <li *ngFor="let cityler of cities | myFiltering: '{{arguman}}'">
+        {{ cityler }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-2">
+    <h3>ng model deneme</h3>
+    <input type="text" [(ngModel)]="arguman" />
+    <p>{{ arguman }}</p>
+  </div>
 </div>

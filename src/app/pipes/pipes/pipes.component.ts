@@ -11,6 +11,11 @@ export class PipesComponent implements OnInit {
   upperCaseVal;
   cashValue = 13432.423;
   today;
+  percentValu = 2334;
+  city = 'istanbul';
+  cash = 1500;
+  cities = ['istanbul', 'ankara', 'malatya', 'mersin', 'antalya', 'samsun'];
+  arguman: string;
 
   constructor() {}
   objectVal: Object = [

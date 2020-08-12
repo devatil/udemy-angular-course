@@ -24,6 +24,7 @@ import { StorageModule } from './storage/storage.module';
 import { DirectivesModule } from './directives/directives.module';
 import { CookieService } from 'ngx-cookie-service';
 import { PipesModule } from './pipes/pipes.module';
+import { Parent1Module } from './parent1/parent1.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { PipesModule } from './pipes/pipes.module';
     StorageModule,
     DirectivesModule,
     PipesModule,
+    Parent1Module,
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,

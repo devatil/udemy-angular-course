@@ -38,6 +38,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pipes/pipes.module').then((m) => m.PipesModule),
   },
+  {
+    path: 'parents',
+    loadChildren: () =>
+      import('./parent1/parent1.module').then((m) => m.Parent1Module),
+  },
 
   {
     path: '**',

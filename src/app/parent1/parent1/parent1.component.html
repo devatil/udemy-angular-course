@@ -1,0 +1,9 @@
+Isminizi giriniz:
+<input type="text" [(ngModel)]="name" />
+
+<p>{{ name }}</p>
+
+Child Companenet:
+<app-child1 [nameVal]="name"></app-child1>
+
+<p routerLink="../parent2">Parent 2 ye git</p>
