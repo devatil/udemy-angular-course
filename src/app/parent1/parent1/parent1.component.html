@@ -1,9 +1,34 @@
-Isminizi giriniz:
-<input type="text" [(ngModel)]="name" />
-
-<p>{{ name }}</p>
-
-Child Companenet:
-<app-child1 [nameVal]="name"></app-child1>
-
-<p routerLink="../parent2">Parent 2 ye git</p>
+<div style="margin: 2rem;">
+  <div class="row">
+    <div class="col-md-1">
+      Isim:
+    </div>
+    <div class="col-md-2">
+      <input type="text" [(ngModel)]="name" />
+    </div>
+    <div class="col-md-2">
+      <select [(ngModel)]="succesStatus">
+        <option value="0">Seciniz</option>
+        <option [ngValue]="true">Basarili</option>
+        <option [ngValue]="false">Basarisiz</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button (click)="calculate()">Calistir</button>
+    </div>
+    <div class="col-md-2">
+      <button (click)="childTrigger()">Child componenti calistir</button>
+    </div>
+    <div class="col-md-2">
+      <button routerLink="../parent2">Parent 2</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <app-child1
+      [data]="calculateData"
+      (resetForm)="resetFormFunc($event)"
+    ></app-child1>
+  </div>
+</div>

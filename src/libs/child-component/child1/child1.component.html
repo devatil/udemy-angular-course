@@ -1,1 +1,8 @@
-Child componenti ismi :{{ nameVal }}
+<div *ngIf="data">
+  {{ data?.name }} adli kisinin sinavdan
+  <p *ngIf="data.status">Basarili olmustur</p>
+  <p *ngIf="!data.status">Basarisiz olmustur</p>
+</div>
+
+<button (click)="emitEvent(data.name)">Resetle</button>
+
