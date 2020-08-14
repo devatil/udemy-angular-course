@@ -1,0 +1,79 @@
+<!--<div class="container">-->
+<!--  <h1>Kayit Formu</h1>-->
+<!--  <form action="" (ngSubmit)="save(myForm)" #myForm="ngForm">-->
+<!--    <div class="form-group">-->
+<!--      <label for="username">-->
+<!--        Isim-->
+<!--      </label>-->
+<!--      <input-->
+<!--        type="text"-->
+<!--        class="form-control"-->
+<!--        id="username"-->
+<!--        name="username"-->
+<!--        required-->
+<!--        ngModel-->
+<!--      />-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="yas">-->
+<!--        Yas-->
+<!--      </label>-->
+<!--      <input type="text" class="form-control" id="yas" name="yas" ngModel />-->
+<!--    </div>-->
+
+<!--    <button type="submit" class="btn btn-success">Submit</button>-->
+<!--  </form>-->
+<!--</div>-->
+<div class="row">
+  <h2>Reactive Form Angular</h2>
+  <div class="col-md-2">
+    <form [formGroup]="registerForm" (ngSubmit)="save(registerForm)">
+      <p
+        *ngIf="
+          registerForm?.controls?.userName?.errors?.required &&
+          registerForm?.controls?.userName?.dirty
+        "
+        style="color: red;"
+      >
+        *Bu Alan Zorunludur
+      </p>
+      <p
+        *ngIf="
+          registerForm?.controls?.userName?.errors?.blacklist &&
+          registerForm?.controls?.userName?.dirty
+        "
+        style="color: red;"
+      >
+        *Bu Alanda J harifini kullanamazsin
+      </p>
+      <p
+        *ngIf="
+          registerForm?.controls?.userName?.errors?.whitespace &&
+          registerForm?.controls?.userName?.dirty
+        "
+        style="color: red;"
+      >
+        *Bosluk olmamalidir
+      </p>
+      <p
+        *ngIf="registerForm?.controls?.userName?.errors?.userNameExist"
+        style="color: red;"
+      >
+        *Bu isim daha once alinmisti
+      </p>
+      <label>
+        User Name: <input type="text" formControlName="userName" />
+      </label>
+      <button (click)="randomUserName($event)">ramdom user name</button>
+      <label> Age: <input type="number" formControlName="age" /> </label>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!registerForm?.valid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
