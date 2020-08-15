@@ -1,27 +1,32 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {CommonModule} from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {ToastrModule} from 'ngx-toastr';
-import {HomeModule} from './home/home.module';
-import {NgxSpinnerModule} from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
+import { HomeModule } from './home/home.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
-import {RoleComponent} from './role/role.component';
-import {AppRoutingModule} from './app-routing.module';
-import {UserModule} from './user/user.module';
-import {NavbarComponent} from './navbar/navbar.component';
-import {IgxIconModule, IgxNavbarModule, IgxNavigationDrawerModule,} from 'igniteui-angular';
-import {SidebarComponent} from './sidebar/sidebar.component';
-import {DataBindingModule} from './data-binding/data-binding.module';
-import {StorageModule} from './storage/storage.module';
-import {DirectivesModule} from './directives/directives.module';
-import {CookieService} from 'ngx-cookie-service';
-import {PipesModule} from './pipes/pipes.module';
-import {Parent1Module} from './parent1/parent1.module';
-import {AngularFormsModule} from './forms/forms.module';
+import { RoleComponent } from './role/role.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UserModule } from './user/user.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import {
+  IgxIconModule,
+  IgxNavbarModule,
+  IgxNavigationDrawerModule,
+} from 'igniteui-angular';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DataBindingModule } from './data-binding/data-binding.module';
+import { StorageModule } from './storage/storage.module';
+import { DirectivesModule } from './directives/directives.module';
+import { CookieService } from 'ngx-cookie-service';
+import { PipesModule } from './pipes/pipes.module';
+import { Parent1Module } from './parent1/parent1.module';
+import { AngularFormsModule } from './forms/forms.module';
+import { UserService } from '../libs';
 
 @NgModule({
   declarations: [
@@ -57,7 +62,7 @@ import {AngularFormsModule} from './forms/forms.module';
       positionClass: 'toast-bottom-left',
     }),
   ],
-  providers: [CookieService],
+  providers: [CookieService, UserService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

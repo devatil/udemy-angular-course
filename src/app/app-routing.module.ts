@@ -1,7 +1,8 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {RoleComponent} from './role/role.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { RoleComponent } from './role/role.component';
+import { AuthdeactivateGuard, AuthGuard } from '../libs';
 
 const routes: Routes = [
   {
@@ -27,11 +28,13 @@ const routes: Routes = [
     path: 'storage',
     loadChildren: () =>
       import('./storage/storage.module').then((m) => m.StorageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'directive',
     loadChildren: () =>
       import('./directives/directives.module').then((m) => m.DirectivesModule),
+    canDeactivate: [AuthdeactivateGuard],
   },
   {
     path: 'pipes',
@@ -56,7 +59,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

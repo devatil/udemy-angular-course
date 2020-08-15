@@ -8,3 +8,6 @@ export * from './custom-validators/blacklist.validator';
 export * from './custom-validators/no-whitespace.validator';
 export * from './custom-validators/custom-name-exist.validator';
 export * from './services/user.service';
+export * from './guard/auth.guard';
+export * from './guard/auth-child.guard';
+export * from './guard/authdeactivate.guard';
