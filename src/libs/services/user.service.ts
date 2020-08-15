@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   users = ['atilla', 'zeynep'];
+  isLogedIn = false;
   constructor() {}
 
   isExistName(val: string) {
@@ -14,5 +15,9 @@ export class UserService {
     } else {
       return of(false);
     }
+  }
+
+  login() {
+    this.isLogedIn = !this.isLogedIn;
   }
 }
