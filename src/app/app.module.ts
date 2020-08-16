@@ -8,8 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeModule } from './home/home.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
-import { RoleComponent } from './role/role.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './user/user.module';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -27,14 +25,12 @@ import { PipesModule } from './pipes/pipes.module';
 import { Parent1Module } from './parent1/parent1.module';
 import { AngularFormsModule } from './forms/forms.module';
 import { UserService } from '../libs';
+import { MapModule } from './map/map.module';
+import { HttpClientModule } from '@angular/common/http';
+import { RoleModule } from './role/role.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RoleComponent,
-    NavbarComponent,
-    SidebarComponent,
-  ],
+  declarations: [AppComponent, NavbarComponent, SidebarComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -51,7 +47,10 @@ import { UserService } from '../libs';
     DirectivesModule,
     PipesModule,
     Parent1Module,
+    MapModule,
+    HttpClientModule,
     AngularFormsModule,
+    RoleModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,

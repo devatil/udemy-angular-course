@@ -11,3 +11,4 @@ export * from './services/user.service';
 export * from './guard/auth.guard';
 export * from './guard/auth-child.guard';
 export * from './guard/authdeactivate.guard';
+export * from './services/map.service';
