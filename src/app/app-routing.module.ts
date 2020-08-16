@@ -12,6 +12,7 @@ const routes: Routes = [
   {
     path: 'role',
     component: RoleComponent,
+    loadChildren: () => import('./role/role.module').then((m) => m.RoleModule),
   },
   {
     path: 'user',
@@ -50,6 +51,10 @@ const routes: Routes = [
     path: 'forms',
     loadChildren: () =>
       import('./forms/forms.module').then((m) => m.AngularFormsModule),
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then((m) => m.MapModule),
   },
 
   {

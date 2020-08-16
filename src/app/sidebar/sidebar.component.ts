@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -42,6 +42,10 @@ export class SidebarComponent implements OnInit {
     {
       baslik: 'Forms',
       path: 'forms',
+    },
+    {
+      baslik: 'Map',
+      path: 'map',
     },
   ];
 

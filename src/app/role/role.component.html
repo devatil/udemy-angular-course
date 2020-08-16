@@ -1,1 +1,5 @@
-<p>role works!</p>
+<ul>
+  <li *ngFor="let role of roleData[0]?.data">
+    {{ role._id }} - {{ role.name }}
+  </li>
+</ul>

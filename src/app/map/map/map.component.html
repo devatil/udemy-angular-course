@@ -1,0 +1,26 @@
+<div class="row" style="margin: 2rem;">
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-control" #cityForm="ngForm" (ngSubmit)="save(cityForm)">
+        <label for="id">ID</label>
+        <input type="number" name="id" ngModel /><br />
+        <label for="name">Name</label>
+        <input type="text" name="name" ngModel /><br />
+        <label for="plaka">Plaka</label>
+        <input type="number" name="plaka" ngModel /><br />
+        <label for="region">Region</label>
+        <input type="text" name="region" ngModel />
+        <button type="submit">Kaydet</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <app-city></app-city>
+  </div>
+  <div class="col-md-4">
+    <app-plaka></app-plaka>
+  </div>
+  <div class="col-md-4">
+    <app-region></app-region>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="row">
+  <h3>Sehirler</h3>
+  <div class="col-md-12" *ngIf="citiesData$ | async as citynewData">
+    <ul>
+      <li *ngFor="let city of citynewData">{{ city.id }} - {{ city.name }}</li>
+    </ul>
+  </div>
+</div>
