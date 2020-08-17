@@ -12,4 +12,15 @@ export class RoleService {
   getRoleData() {
     return this.http.get<any>(this.connection);
   }
+
+  addNewRole(role: any) {
+    return this.http.post<any>(this.connection, role);
+  }
+
+  editRole(role: any) {
+    return this.http.put<any>(this.connection + `/${role.id}`, role);
+  }
+  deleteRole(role: any) {
+    return this.http.delete<any>(this.connection + `/${role.id}`, role);
+  }
 }
