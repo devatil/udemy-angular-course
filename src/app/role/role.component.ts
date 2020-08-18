@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RoleService } from '../../libs/services/role.service';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -11,9 +10,6 @@ import { SubSink } from 'subsink';
 })
 export class RoleComponent implements OnInit, OnDestroy {
   roleData;
-  sub1: Subscription;
-  sub2: Subscription;
-  sub3: Subscription;
 
   private sub = new SubSink();
   constructor(private roleService: RoleService) {}
@@ -22,7 +18,6 @@ export class RoleComponent implements OnInit, OnDestroy {
     this.getRoles();
   }
   ngOnDestroy() {
-    this.sub1.unsubscribe(), this.sub2.unsubscribe(), this.sub3.unsubscribe();
     this.sub.unsubscribe();
   }
 
@@ -35,23 +30,29 @@ export class RoleComponent implements OnInit, OnDestroy {
   }
 
   addRole(role: NgForm) {
-    this.sub1 = this.roleService.addNewRole(role.value).subscribe(
-      (data) => this.getRoles(),
-      (error) => alert('something wrong')
+    this.sub.add(
+      this.roleService.addNewRole(role.value).subscribe(
+        (data) => this.getRoles(),
+        (error) => alert('something wrong')
+      )
     );
   }
 
   editNewRole(role: NgForm) {
-    this.sub2 = this.roleService.editRole(role.value).subscribe(
-      (data) => this.getRoles(),
-      (error) => alert('put medtodunda bir hata var')
+    this.sub.add(
+      this.roleService.editRole(role.value).subscribe(
+        (data) => this.getRoles(),
+        (error) => alert('put medtodunda bir hata var')
+      )
     );
   }
 
   deleteNewRole(role: NgForm) {
-    this.sub3 = this.roleService.deleteRole(role.value).subscribe(
-      (data) => this.getRoles(),
-      (error) => alert('Someting wrong with delete crud metod')
+    this.sub.add(
+      this.roleService.deleteRole(role.value).subscribe(
+        (data) => this.getRoles(),
+        (error) => alert('Someting wrong with delete crud metod')
+      )
     );
   }
 }

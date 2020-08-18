@@ -26,8 +26,9 @@ import { Parent1Module } from './parent1/parent1.module';
 import { AngularFormsModule } from './forms/forms.module';
 import { UserService } from '../libs';
 import { MapModule } from './map/map.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RoleModule } from './role/role.module';
+import { AuthInterceptor } from '../libs/interseptors/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SidebarComponent],
@@ -61,7 +62,15 @@ import { RoleModule } from './role/role.module';
       positionClass: 'toast-bottom-left',
     }),
   ],
-  providers: [CookieService, UserService],
+  providers: [
+    CookieService,
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
