@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,11 @@ export class AppComponent implements OnInit {
 
   constructor(
     private toastr: ToastrService,
-    private spinner: NgxSpinnerService
-  ) {}
+    private spinner: NgxSpinnerService,
+    private translateService: TranslateService
+  ) {
+    translateService.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.showSuccess();

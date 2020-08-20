@@ -26,9 +26,19 @@ import { Parent1Module } from './parent1/parent1.module';
 import { AngularFormsModule } from './forms/forms.module';
 import { UserService } from '../libs';
 import { MapModule } from './map/map.module';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import { RoleModule } from './role/role.module';
 import { AuthInterceptor } from '../libs/interseptors/auth.interceptor';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SidebarComponent],
@@ -52,6 +62,13 @@ import { AuthInterceptor } from '../libs/interseptors/auth.interceptor';
     HttpClientModule,
     AngularFormsModule,
     RoleModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,
@@ -64,6 +81,7 @@ import { AuthInterceptor } from '../libs/interseptors/auth.interceptor';
   ],
   providers: [
     CookieService,
+    TranslateService,
     UserService,
     {
       provide: HTTP_INTERCEPTORS,
@@ -75,3 +93,6 @@ import { AuthInterceptor } from '../libs/interseptors/auth.interceptor';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
