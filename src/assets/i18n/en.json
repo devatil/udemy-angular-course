@@ -1,0 +1,9 @@
+{
+  "app": {
+    "title": "This is title"
+  },
+  "toastr": {
+    "title":"login successful",
+    "message": "Welcome angular tutorial session"
+  }
+}

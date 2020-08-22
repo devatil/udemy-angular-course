@@ -5,6 +5,14 @@
   actionButtonIcon="Home"
   [isActionButtonVisible]="true"
 >
+  <igx-select
+    [value]="lang"
+    (onSelection)="langChange.emit($event.newSelection.value)"
+  >
+    <label igxLabel>Dil secicimi</label>
+    <igx-select-item value="tr">TR</igx-select-item>
+    <igx-select-item value="en">EN</igx-select-item>
+  </igx-select>
   <igx-icon>search</igx-icon>
   <igx-icon (click)="toggled()">login</igx-icon>
   <igx-icon>more_vert</igx-icon>
