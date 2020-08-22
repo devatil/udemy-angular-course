@@ -1,5 +1,9 @@
 {
   "app": {
     "title": "Bu bir basliktir."
+  },
+  "toastr": {
+    "title":"Giris Basarili",
+    "message": "Angular Udemy Egitimine Hosgeldiniz"
   }
 }

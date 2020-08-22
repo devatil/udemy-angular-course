@@ -7,7 +7,6 @@ import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -33,7 +32,7 @@ export class HomeModule {}
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
     http,
-    '../../assets/i18n',
+    '../../assets/i18n/',
     '.json?cb=' + new Date().getTime()
   );
 }

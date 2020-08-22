@@ -26,10 +26,11 @@ export class AppComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success(
-      'Angular Udemy Egitimine Hosgeldiniz',
-      'Giris Basarili'
-    );
+    this.translateService.onLangChange.subscribe((res) => {
+      const message = this.translateService.instant('toastr.message');
+      const title = this.translateService.instant('toastr.title');
+      this.toastr.success(message, title);
+    });
   }
 
   showSpinner() {

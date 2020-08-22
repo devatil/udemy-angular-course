@@ -11,7 +11,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
 import {AppRoutingModule} from './app-routing.module';
 import {UserModule} from './user/user.module';
 import {NavbarComponent} from './navbar/navbar.component';
-import {IgxIconModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxSelectModule,} from 'igniteui-angular';
+import {IgxIconModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxSelectModule} from 'igniteui-angular';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {DataBindingModule} from './data-binding/data-binding.module';
 import {StorageModule} from './storage/storage.module';
@@ -20,12 +20,11 @@ import {CookieService} from 'ngx-cookie-service';
 import {PipesModule} from './pipes/pipes.module';
 import {Parent1Module} from './parent1/parent1.module';
 import {AngularFormsModule} from './forms/forms.module';
-import {UserService} from '../libs';
+import {AuthInterceptor, UserService} from '../libs';
 import {MapModule} from './map/map.module';
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule,} from '@angular/common/http';
-import {TranslateLoader, TranslateModule, TranslateService,} from '@ngx-translate/core';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {RoleModule} from './role/role.module';
-import {AuthInterceptor} from '../libs/interseptors/auth.interceptor';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 @NgModule({
@@ -85,7 +84,7 @@ export class AppModule {}
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
     http,
-    '../assets/i18n',
+    '../assets/i18n/',
     '.json?cb=' + new Date().getTime()
   );
 }
