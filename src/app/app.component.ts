@@ -14,9 +14,10 @@ export class AppComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
     private spinner: NgxSpinnerService,
-    private translateService: TranslateService
+    public translateService: TranslateService
   ) {
     translateService.setDefaultLang('en');
+    translateService.use('en');
   }
 
   ngOnInit() {
@@ -38,5 +39,9 @@ export class AppComponent implements OnInit {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 2000);
+  }
+
+  setLang(lang: string) {
+    this.translateService.use(lang);
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../libs';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {UserService} from '../../libs';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +8,8 @@ import { UserService } from '../../libs';
 })
 export class NavbarComponent implements OnInit {
   constructor(private userService: UserService) {}
-
+  @Input() lang: any;
+  @Output() langChange: EventEmitter<any> = new EventEmitter<any>();
   ngOnInit(): void {}
 
   toggled() {
