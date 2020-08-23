@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-5">
+    <div class="form-data">
+      <input
+        type="file"
+        #file
+        (change)="handleFileUpload($event.target.files)"
+      />
+
+      <button (click)="uploadFiles()">Resim Ekle</button>
+    </div>
+  </div>
+  <div class="col md-7">
+    <img
+      *ngFor="let image of images"
+      [src]="image.url"
+      style="max-width: 200px !important;"
+    />
+  </div>
+</div>
