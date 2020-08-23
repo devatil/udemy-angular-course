@@ -19,13 +19,16 @@ import {DirectivesModule} from './directives/directives.module';
 import {CookieService} from 'ngx-cookie-service';
 import {PipesModule} from './pipes/pipes.module';
 import {Parent1Module} from './parent1/parent1.module';
-import {AngularFormsModule} from './forms/forms.module';
+
 import {AuthInterceptor, UserService} from '../libs';
-import {MapModule} from './map/map.module';
+
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import {RoleModule} from './role/role.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MapModule} from './map/map.module';
+import {AngularFormsModule} from './forms/forms.module';
+import {UploadModule} from './upload/upload.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SidebarComponent],
@@ -50,6 +53,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     HttpClientModule,
     AngularFormsModule,
     RoleModule,
+    UploadModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -47,6 +47,10 @@ export class SidebarComponent implements OnInit {
       baslik: 'Map',
       path: 'map',
     },
+    {
+      baslik: 'Upload',
+      path: 'upload',
+    },
   ];
 
   constructor() {}
