@@ -1,8 +1,25 @@
-<p>user-list works!</p>
-<button igxButton="flat">Welcome</button>
-<ul>
-  <li *ngFor="let user of userData ? userData : []">
-    user Name : {{ user.name }} - surname {{ user.surname }} - email:
-    {{ user.email }} - birthday : {{ user.birthDay | date }}
-  </li>
-</ul>
+<!--<p>user-list works!</p>-->
+<!--<button igxButton="flat">Welcome</button>-->
+<!--<ul>-->
+<!--  <li *ngFor="let user of userData ? userData : []">-->
+<!--    user Name : {{ user.name }} - surname {{ user.surname }} - email:-->
+<!--    {{ user.email }} - birthday : {{ user.birthDay | date }}-->
+<!--  </li>-->
+<!--</ul>-->
+
+<h1 *ngIf="users.length > 0">Kullanici ekle</h1>
+<div class="row">
+  <div class="col-md-4">
+    <button class="add-button" (click)="getRandomUser()">
+      Rasgele Kullanci ekle
+    </button>
+    <div class="col-md-6">
+      <ul class="user-list">
+        <li class="user-list-item" *ngFor="let user of users">
+          {{ user.name }}
+        </li>
+      </ul>
+      <h3 *ngIf="users.length === 0">Kullanici Listesi Bos</h3>
+    </div>
+  </div>
+</div>
